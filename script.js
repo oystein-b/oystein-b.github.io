@@ -342,6 +342,8 @@ fetch(dataURL)
   .then(res => res.json())
   .then(data => {
     document.querySelector(".date").textContent = data.date;
+    var nydate = "dd/mm/yyyy";
+    var date=nydate;
     data.rates["EUR"] = 1;
     currencies = currencies.filter(currency => data.rates[currency.abbreviation]);
     currencies.forEach(currency => currency.rate = data.rates[currency.abbreviation]);
